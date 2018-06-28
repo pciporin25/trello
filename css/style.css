@@ -1,0 +1,205 @@
+h1, #project-styling {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+form {
+  padding: 30px;
+}
+
+.trello-card {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #F000FF;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 300px;
+  border: 5px solid green;
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+}
+
+.trello-card button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trello-card li, label {
+  padding: 20px;
+  margin: auto;
+  z-index: 0;
+}
+
+.add-card {
+  list-style: none;
+}
+
+.add-card, .remove-list {
+  align-items: center;
+  text-align: center;
+  margin-left: 50% !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.expand-collapse {
+  align-items: center;
+  text-align: center;
+  margin-right: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.add-remove {
+  position: relative;
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  text-align: center;
+}
+
+.drop-box{
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 300px;
+  border: 5px solid green;
+  padding: 10px;
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+  margin-right: 20%;
+}
+
+
+.item-list{
+  margin-right: 50%;
+}
+
+
+.add-list {
+  margin-bottom: 50px;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+
+.trello-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  color: #FFFFFF;
+  z-index: 900;
+}
+
+.trello-modal .trello-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+#todo_list, #user_list {
+  margin-top: 10px;
+  border: 0px;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
+  display: inline-block;
+}
+
+#todo_list li, label {
+  padding: 0px;
+  border: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#category_list li {
+  position: relative;
+  list-style: none;
+  padding: 0px;
+  border: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#category_list button {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#add_card_to_list {
+  display: inline-block;
+}
+
+#add_card_to_list p {
+  border: 20px;
+}
+
+#add_card_to_list svg {
+    width: 40px;
+    height: 40px;
+}
+
+#cardForm {
+  text-align: center;
+}
+
+#add_new_list {
+  margin-top: 20px;
+}
+
+#filter-bar {
+  height: 100px;
+  width: 100%;
+  background-color: #000000;
+  color: #FFFFFF;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+#filter-bar p {
+  padding-top: 10px;
+  margin: 0px;
+}
+
+.toFilter {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  overflow-x: scroll;
+}
+
+.card-image {
+  height: 100px;
+}
+
+#collapsebtn {
+  margin-top: 40px;
+}

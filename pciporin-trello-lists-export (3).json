@@ -1,0 +1,97 @@
+{
+  "-L80Rf7YfrClFHIRHTZO" : {
+    "cards" : {
+      "-L80RfglxefcFt1nh5KS" : {
+        "categories" : [ {
+          "color" : "#ff5863",
+          "name" : "category1"
+        }, {
+          "color" : "#6358ff",
+          "name" : "category2"
+        } ],
+        "deadline" : "12/04/2019 at 18:30",
+        "description" : "This is a sample card.",
+        "expandCard" : false,
+        "id" : -11,
+        "isEditting" : false,
+        "isHidden" : false,
+        "name" : "Card 1",
+        "timestamp" : "3/15/2018 at 13:06",
+        "todos" : [ "first", "second" ],
+        "users" : [ "John Doe" ]
+      },
+      "-L80Rg4L1xn367iJQVaU" : {
+        "categories" : [ {
+          "color" : "#6358ff",
+          "name" : "category2"
+        }, {
+          "color" : "#ffffff",
+          "name" : "another"
+        } ],
+        "deadline" : "12/13/2018 at 16:19",
+        "description" : "This is a sample card.",
+        "expandCard" : false,
+        "id" : -12,
+        "images" : [ "https://firebasestorage.googleapis.com/v0/b/pciporin-trello.appspot.com/o/cardImages%2FScreen%20Shot%202018-02-28%20at%203.57.13%20PM.png?alt=media&token=25220379-55ba-4af7-b8dd-f2028cd631a9" ],
+        "isEditting" : false,
+        "isHidden" : false,
+        "name" : "Card 2",
+        "timestamp" : "3/15/2018 at 13:06",
+        "todos" : [ "first", "second" ]
+      }
+    },
+    "id" : 6,
+    "isAddingCard" : false,
+    "isCollapsed" : false,
+    "isEditting" : false,
+    "movePosition" : -1,
+    "title" : "My List"
+  },
+  "-L80RkPgrCfD65hHd0vJ" : {
+    "cards" : {
+      "-L80RlpRB6Isq8BMBr4E" : {
+        "categories" : [ {
+          "color" : "#ff5863",
+          "name" : "category1"
+        }, {
+          "color" : "#6358ff",
+          "name" : "category2"
+        } ],
+        "deadline" : "12/13/2018 at 16:19",
+        "description" : "This is a sample card.",
+        "expandCard" : false,
+        "id" : -21,
+        "isEditting" : false,
+        "isHidden" : false,
+        "name" : "Card 3",
+        "timestamp" : "3/15/2018 at 13:06",
+        "todos" : [ "first", "second" ]
+      },
+      "-L80U7qR7qOknG0AsxoF" : {
+        "categories" : [ {
+          "color" : "#00ff00",
+          "name" : "Some Third Category"
+        } ],
+        "comments" : [ {
+          "editting" : false,
+          "text" : "Example comment"
+        } ],
+        "expandCard" : false,
+        "id" : -43,
+        "images" : [ "https://firebasestorage.googleapis.com/v0/b/pciporin-trello.appspot.com/o/cardImages%2FScreen%20Shot%202018-02-07%20at%2010.37.14%20PM.png?alt=media&token=fb61ae86-c166-40de-87ec-6ddd11c0bd3e" ],
+        "isEditting" : false,
+        "isHidden" : false,
+        "name" : "Card 4",
+        "timestamp" : "3/19/2018 at 23:36",
+        "todos" : [ "task" ],
+        "users" : [ null, "Bob Smith" ]
+      }
+    },
+    "id" : 7,
+    "isAddingCard" : false,
+    "isCollapsed" : false,
+    "isEditting" : false,
+    "movePosition" : -1,
+    "title" : "Another List"
+  }
+}

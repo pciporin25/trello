@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Peter Ciporin">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- support for this page -->
+    <script src="js/trello-project.js?v=12345" async></script>
+    <link rel="stylesheet" href="css/style.css?v=1234">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>My Trello</title>
+</head>
+
+<body>
+  <a href="./index.html">Back to Sign-in Page</a>
+<div id="app" v-bind:style="projectStyle" v-cloak>
+
+  <h1> My Trello Project </h1>
+
+  <button @click="testfn">Click me</button>
+
+  <div id="filter-bar">
+    <p>Select from the below categories to filter <i>out</i> associated cards:<p>
+    <div class="toFilter" v-for="(category, color) in Array.from(categoryMap)">
+      <div class="color-box" :style="{ 'background-color': category[1] }"></div>
+      <input type="checkbox" :id="category[0]" :value="category[0]" v-model="filtered" @change="filterCards">
+      <label :for="category[0]">{{ category[0] }}</label>
+    </div>
+  </div>
+
+  <ul>
+    <div class="row">
+      <!--trello-list v-for="list in lists" v-bind:list="list" v-bind:key="list.id">
+      </trello-list-->
+      <li class="list col-md-6 col-sm-12 col-lg-4" v-for="list in lists">
+        <input class="title" v-if="list.isEditting" v-model="list.title" @keyup.enter="list.isEditting = false" />
+        <label class="title" v-else @dblclick="list.isEditting = true">{{ list.title }}</label>
+
+        <div class="expand-collapse">
+          <div v-if="list.isCollapsed==false" class="collapseList">
+            <button id="collapseList" class="btn btn-primary" @click="list.isCollapsed = true">Collapse List</button>
+          </div>
+
+          <div v-else class="expandList">
+            <button id="expandList" class="btn btn-primary" @click="list.isCollapsed = false">Expand List</button>
+          </div>
+
+        </div>
+
+        <div class="moveList">
+          <select v-model="list.movePosition">
+            <option v-for="temp in lists" :value="temp.id">{{ temp.title }}</option>
+          </select>
+          <span v-if="list.movePosition==-1">Move this list to position of selected list</span>
+          <button v-else class="btn btn-primary" @click="moveList(list, list.movePosition)">Move List to Position {{ list.movePosition }}</button>
+        </div>
+
+        <ul v-if="list.isCollapsed==false" class="item-list">
+          <trello-card v-for="card in list.cards" v-bind:card="card" v-bind:list="list" v-bind:key="card.key" v-bind:id="card.id">
+          </trello-card>
+
+          <div v-bind:id="list.id" class="drop-box" @drop="onDrop($event)" @dragover.prevent>
+            <h4>Drag Card Here to Add to This List</h4>
+          </div>
+
+          <!--div class="row add-remove"-->
+
+            <div class="row remove-list">
+              <button class="btn btn-primary" v-on:click="removeList(list)">Remove This List</button>
+            </div>
+
+            <!-- Add logic for each list (add card, remove list)  -->
+            <li class="row add-card">
+                <!-- conditionally allow titles to be editted -->
+                <form v-if="list.isAddingCard" id="cardForm" @submit.prevent="addCard(list)">
+                    <label for="cardName">Card Name:</label>
+                    <input type="text" id="cardName" v-model="newCardName" /><br><br>
+
+                    <input class="btn btn-primary" type="submit" value="Add Card" /><br><br>
+                    <input class="btn btn-primary" type="reset" value="Cancel" @click="resetAddCard(list)"/>
+                </form>
+                <!-- SVG code from ShareIcon.net: "O, plus, square icon" -->
+                <div v-else @click="list.isAddingCard = true" id="add_card_to_list">
+                  <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1344 800v64q0 14-9 23t-23 9h-352v352q0 14-9 23t-23 9h-64q-14 0-23-9t-9-23v-352h-352q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h352v-352q0-14 9-23t23-9h64q14 0 23 9t9 23v352h352q14 0 23 9t9 23zm128 448v-832q0-66-47-113t-113-47h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113zm128-832v832q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q119 0 203.5 84.5t84.5 203.5z"/>
+                  </svg>
+                  <p>Add Card to List</p>
+                </div>
+            </li>
+
+          <!--/div-->
+
+      </ul>
+
+      </li>
+    </div>
+
+    <li class="add-list">
+      <!-- conditionally allow titles to be editted -->
+      <form v-if="isAddingList" id="listForm" @submit.prevent="addList()">
+          <label for="listTitle">List Title:</label>
+          <input type="text" id="listTitle" v-model="newListTitle" />
+
+          <input class="btn btn-primary" type="submit" value="Add List" />
+          <input class="btn btn-primary" type="reset" value="Cancel" @click="resetAddList()"/>
+      </form>
+      <!-- SVG code from ShareIcon.net: "O, plus, square icon" -->
+      <button id="add_new_list" class="btn btn-primary" v-else @click="isAddingList = true">Add New List</button>
+    </li>
+
+    <div id="project-styling">
+      <h3> Customize your Project </h3>
+
+      <input type="color" id="bg-select" value="#00ccff" v-on:change="updateBackground($event)"/>
+      <label type="text" for="bg-select">Customize background color</label>
+
+      <input type="color" id="text-select" value="#000000" v-on:change="updateText($event)"/>
+      <label type="text" for="text-select">Customize text color</label>
+    </div>
+
+  </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Peter Ciporin">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+    <!-- support for this page -->
+    <script src="js/script.js" async></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>My Trello</title>
+</head>
+
+<body>
+<h1> My Trello </h1>
+
+<div id="app" v-cloak>
+    <ul id="js-linklist">
+        <!-- loop each element in list as usual -->
+        <div class="row">
+        <li class="title col-md-4" v-for="item in items">
+            <!-- conditionally allow titles to be editted -->
+            <input v-if="item.isEditting" v-model="item.title" @keyup.enter="item.isEditting = false" />
+            <label v-else @dblclick="item.isEditting = true">{{ item.title }}</label>
+            <ul class="category" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- within element that defines outer loop, loop over each element in sublist -->
+                <li class="link" v-for="link in item.links" v-bind:id="link.name" draggable="true" ondragstart="drag(event)" ondragover="">
+                  <!--div type="text" draggable="true" ondragstart="drag(event)"-->
+                    <!--a :href="link.url" draggable="false">{{ link.name }}</a-->
+                    <p draggable="false" ondragover=""> {{ link.name }}></p>
+                    <p draggable="false" ondragover=""> {{ link.url }}></p>
+                    <trello-card></trello-card>
+                  <!--/div-->
+                </li>
+                <li class="add-item">
+                    <!-- conditionally allow titles to be editted -->
+                    <form v-if="item.isAddingLink" id="form" @submit.prevent="addLink(item)">
+                        <label for="linkText">Text:</label>
+                        <input type="text" id="linkText" v-model="newLinkText" />
+                        <label for="linkURL">URL:</label>
+                        <input type="text" id="linkURL" v-model="newLinkURL" />
+                        <input type="submit" value="Add Link" />
+                        <input type="reset" value="Cancel" @click="resetAddLink(item)"/>
+                    </form>
+                    <!-- SVG code from ShareIcon.net: "O, plus, square icon" -->
+                    <svg v-else @click="item.isAddingLink = true" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1344 800v64q0 14-9 23t-23 9h-352v352q0 14-9 23t-23 9h-64q-14 0-23-9t-9-23v-352h-352q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h352v-352q0-14 9-23t23-9h64q14 0 23 9t9 23v352h352q14 0 23 9t9 23zm128 448v-832q0-66-47-113t-113-47h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113zm128-832v832q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q119 0 203.5 84.5t84.5 203.5z"/>
+                    </svg>
+                </li>
+            </ul>
+        </li>
+      </div>
+    </ul>
+</div>
+
+<ol id="guy">
+<trello-card></trello-card>
+</ol>
+
+</body>
+</html>

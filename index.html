@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- always put your name in your work -->
+  <meta name="author" content="Peter Ciporin">
+  <!-- stop the web browser from ever caching this page or its images -->
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <!-- libraries neded for this page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- support for this page -->
+  <script src="js/login.js?v=8" async></script>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <title>Trello Home Page</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1> Trello Home Page </h1>
+
+    <div id="default-buttons">
+      <button class="btn btn-primary" v-if="!newCreateAccount && !newSignIn" v-on:click="newCreateAccount=true">Create Account</button>
+      <button class="btn btn-primary" v-if="!newCreateAccount && !newSignIn" v-on:click="newSignIn = true">Sign Into an Exiting Account</button>
+    </div>
+
+    <div id="create-account">
+      <form v-if="newCreateAccount" id="create-account" @submit.prevent="createAccount()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="newName" />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" v-model="newEmail" />
+
+        <label for="files">Image:</label>
+        <input type="file" id="files" name="files[]" />
+
+        <input class="btn btn-primary" type="submit" value="Create Account" />
+        <input class="btn btn-primary" type="reset" value="Cancel" @click="resetUser()" />
+      </form>
+      <form v-if="newSignIn" id="sign-in" @submit.prevent="signIn()">
+        <label for="login">Enter your name or email:</label>
+        <input type="text" id="login" v-model="loginInfo" />
+
+        <input class="btn btn-primary" type="submit" value="Sign In" />
+        <input class="btn btn-primary" type="reset" value="Cancel" @click="resetUser()" />
+      </form>
+    </div>
+
+    <div id="display-user" v-if="loggedIn">
+      <p>User found!</p>
+      <p>Name is: {{ currentUser.name }}</p>
+      <p>Email is: {{ currentUser.email }}</p>
+      <img :src="currentUser.image">
+      <a href="./trello-project.html">Go to your project</a>
+    </div>
+
+  </div>
+</body>
+
+</html>

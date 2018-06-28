@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+  padding: 50px;
+}
+
+#default-buttons, #create-account, #display-user {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+}

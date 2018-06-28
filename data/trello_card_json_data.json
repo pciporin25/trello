@@ -1,0 +1,264 @@
+{
+  "id": "5a9e32cd46901a84e79afbc9",
+  "badges": {
+    "votes": 0,
+    "attachmentsByType": {
+      "trello": {
+        "board": 0,
+        "card": 0
+      }
+    },
+    "viewingMemberVoted": false,
+    "subscribed": false,
+    "fogbugz": "",
+    "checkItems": 0,
+    "checkItemsChecked": 0,
+    "comments": 0,
+    "attachments": 0,
+    "description": false,
+    "due": null,
+    "dueComplete": false
+  },
+  "checkItemStates": [],
+  "closed": false,
+  "dueComplete": false,
+  "dateLastActivity": "2018-03-06T06:21:05.676Z",
+  "desc": "",
+  "descData": null,
+  "due": null,
+  "email": "peterciporin+2mmuqo6hisk0zps40su+2pvtknjgapd4p14a7d5+18wek7ongj@boards.trello.com",
+  "idBoard": "5a6032d22a1320f16ee99455",
+  "idChecklists": ["5a9e32ef0b03b581117c71a0"],
+  "idList": "5a9cde0ae111abe37f6c6dfa",
+  "idMembers": [],
+  "idMembersVoted": [],
+  "idShort": 18,
+  "idAttachmentCover": null,
+  "labels": [],
+  "limits": {
+    "attachments": {
+      "perCard": {
+        "status": "ok",
+        "disableAt": 950,
+        "warnAt": 900
+      }
+    },
+    "checklists": {
+      "perCard": {
+        "status": "ok",
+        "disableAt": 475,
+        "warnAt": 450
+      }
+    },
+    "stickers": {
+      "perCard": {
+        "status": "ok",
+        "disableAt": 67,
+        "warnAt": 63
+      }
+    }
+  },
+  "idLabels": [],
+  "manualCoverAttachment": false,
+  "name": "Week of 3/5",
+  "pos": 65535,
+  "shortLink": "mx9m65Bc",
+  "shortUrl": "https://trello.com/c/mx9m65Bc",
+  "subscribed": false,
+  "url": "https://trello.com/c/mx9m65Bc/18-week-of-3-5",
+  "actions": [{
+    "id": "5a9e3351c76be7d20cddbe1b",
+    "idMemberCreator": "579c2beeb285da25ae6dad0e",
+    "data": {
+      "cardSource": {
+        "shortLink": "mx9m65Bc",
+        "idShort": 18,
+        "name": "Week of 3/5",
+        "id": "5a9e32cd46901a84e79afbc9"
+      },
+      "list": {
+        "name": "Schoolwork",
+        "id": "5a9cde0ae111abe37f6c6dfa"
+      },
+      "board": {
+        "shortLink": "1s5kYrEn",
+        "name": "2018",
+        "id": "5a6032d22a1320f16ee99455"
+      },
+      "checklist": {
+        "name": "To Do",
+        "id": "5a9e32ef0b03b581117c71a0"
+      },
+      "card": {
+        "shortLink": "oNQKMsx0",
+        "idShort": 21,
+        "name": "I&E take-home midterm (3 pages)",
+        "id": "5a9e3351c76be7d20cddbe1a"
+      }
+    },
+    "type": "convertToCardFromCheckItem",
+    "date": "2018-03-06T06:21:05.684Z",
+    "memberCreator": {
+      "id": "579c2beeb285da25ae6dad0e",
+      "avatarHash": null,
+      "fullName": "Peter Ciporin",
+      "initials": "PC",
+      "username": "peterciporin"
+    }
+  }, {
+    "id": "5a9e334f3eda8e23087462e6",
+    "idMemberCreator": "579c2beeb285da25ae6dad0e",
+    "data": {
+      "cardSource": {
+        "shortLink": "mx9m65Bc",
+        "idShort": 18,
+        "name": "Week of 3/5",
+        "id": "5a9e32cd46901a84e79afbc9"
+      },
+      "list": {
+        "name": "Schoolwork",
+        "id": "5a9cde0ae111abe37f6c6dfa"
+      },
+      "board": {
+        "shortLink": "1s5kYrEn",
+        "name": "2018",
+        "id": "5a6032d22a1320f16ee99455"
+      },
+      "checklist": {
+        "name": "To Do",
+        "id": "5a9e32ef0b03b581117c71a0"
+      },
+      "card": {
+        "shortLink": "4zqOlWcE",
+        "idShort": 20,
+        "name": "290 project (Trello)",
+        "id": "5a9e334f3eda8e23087462e5"
+      }
+    },
+    "type": "convertToCardFromCheckItem",
+    "date": "2018-03-06T06:21:03.520Z",
+    "memberCreator": {
+      "id": "579c2beeb285da25ae6dad0e",
+      "avatarHash": null,
+      "fullName": "Peter Ciporin",
+      "initials": "PC",
+      "username": "peterciporin"
+    }
+  }, {
+    "id": "5a9e334858e571b1b9996b6d",
+    "idMemberCreator": "579c2beeb285da25ae6dad0e",
+    "data": {
+      "cardSource": {
+        "shortLink": "mx9m65Bc",
+        "idShort": 18,
+        "name": "Week of 3/5",
+        "id": "5a9e32cd46901a84e79afbc9"
+      },
+      "list": {
+        "name": "Schoolwork",
+        "id": "5a9cde0ae111abe37f6c6dfa"
+      },
+      "board": {
+        "shortLink": "1s5kYrEn",
+        "name": "2018",
+        "id": "5a6032d22a1320f16ee99455"
+      },
+      "checklist": {
+        "name": "To Do",
+        "id": "5a9e32ef0b03b581117c71a0"
+      },
+      "card": {
+        "shortLink": "TQYyUSpJ",
+        "idShort": 19,
+        "name": "VR Paper Summary",
+        "id": "5a9e334858e571b1b9996b6b"
+      }
+    },
+    "type": "convertToCardFromCheckItem",
+    "date": "2018-03-06T06:20:56.475Z",
+    "memberCreator": {
+      "id": "579c2beeb285da25ae6dad0e",
+      "avatarHash": null,
+      "fullName": "Peter Ciporin",
+      "initials": "PC",
+      "username": "peterciporin"
+    }
+  }, {
+    "id": "5a9e32ef0b03b581117c71a1",
+    "idMemberCreator": "579c2beeb285da25ae6dad0e",
+    "data": {
+      "board": {
+        "shortLink": "1s5kYrEn",
+        "name": "2018",
+        "id": "5a6032d22a1320f16ee99455"
+      },
+      "checklist": {
+        "name": "To Do",
+        "id": "5a9e32ef0b03b581117c71a0"
+      },
+      "card": {
+        "shortLink": "mx9m65Bc",
+        "idShort": 18,
+        "name": "Week of 3/5",
+        "id": "5a9e32cd46901a84e79afbc9"
+      }
+    },
+    "type": "addChecklistToCard",
+    "date": "2018-03-06T06:19:27.093Z",
+    "memberCreator": {
+      "id": "579c2beeb285da25ae6dad0e",
+      "avatarHash": null,
+      "fullName": "Peter Ciporin",
+      "initials": "PC",
+      "username": "peterciporin"
+    }
+  }, {
+    "id": "5a9e32cd46901a84e79afbca",
+    "idMemberCreator": "579c2beeb285da25ae6dad0e",
+    "data": {
+      "board": {
+        "shortLink": "1s5kYrEn",
+        "name": "2018",
+        "id": "5a6032d22a1320f16ee99455"
+      },
+      "list": {
+        "name": "Schoolwork",
+        "id": "5a9cde0ae111abe37f6c6dfa"
+      },
+      "card": {
+        "shortLink": "mx9m65Bc",
+        "idShort": 18,
+        "name": "Week of 3/5",
+        "id": "5a9e32cd46901a84e79afbc9"
+      }
+    },
+    "type": "createCard",
+    "date": "2018-03-06T06:18:53.842Z",
+    "memberCreator": {
+      "id": "579c2beeb285da25ae6dad0e",
+      "avatarHash": null,
+      "fullName": "Peter Ciporin",
+      "initials": "PC",
+      "username": "peterciporin"
+    }
+  }],
+  "checklists": [{
+    "id": "5a9e32ef0b03b581117c71a0",
+    "name": "To Do",
+    "idBoard": "5a6032d22a1320f16ee99455",
+    "idCard": "5a9e32cd46901a84e79afbc9",
+    "pos": 16384,
+    "limits": {
+      "checkItems": {
+        "perChecklist": {
+          "status": "ok",
+          "disableAt": 190,
+          "warnAt": 180
+        }
+      }
+    },
+    "checkItems": []
+  }],
+  "members": [],
+  "pluginData": []
+}
